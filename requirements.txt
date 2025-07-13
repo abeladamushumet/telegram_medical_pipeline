@@ -1,0 +1,29 @@
+# General
+python-dotenv
+pandas
+tqdm
+loguru
+requests
+
+# Telegram Scraping
+telethon
+
+# PostgreSQL + ORM
+sqlalchemy
+psycopg2-binary
+
+# dbt
+dbt-core
+dbt-postgres
+
+# YOLOv8 Object Detection
+ultralytics
+
+# FastAPI API
+fastapi
+uvicorn
+pydantic
+
+# Orchestration
+dagster
+dagster-webserver
