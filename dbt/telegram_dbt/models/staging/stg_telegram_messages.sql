@@ -1,24 +1,27 @@
-with raw as (
-    select
-        (jsonb ->> 'id')::int as id,
-        (jsonb ->> 'date')::timestamp as date,
-        (jsonb ->> 'message') as message_text,
-        (jsonb ->> 'peer_id')::jsonb ->> 'channel_id' as channel_id,
-        case
-            when jsonb -> 'media' ->> '@type' = 'messageMediaPhoto' then true
-            else false
-        end as has_image
-    from {{ source('raw', 'telegram_messages') }}
-),
+with raw_data as (
 
-cleaned as (
     select
-        id,
+        message_id,
         date,
         message_text,
-        channel_id::int,
-        has_image
-    from raw
+        views,
+        replies_count,
+        post_author,
+        photo_sizes,
+        grouped_id
+    from raw.telegram_messages
+
 )
 
-select * from cleaned
+select
+    message_id,
+    date::timestamp as message_date,
+    coalesce(message_text, '') as message_text,
+    coalesce(views, 0) as views,
+    coalesce(replies_count, 0) as replies_count,
+    post_author,
+    -- photo_sizes is JSONB, keep as is or parse if needed
+    photo_sizes,
+    grouped_id
+
+from raw_data

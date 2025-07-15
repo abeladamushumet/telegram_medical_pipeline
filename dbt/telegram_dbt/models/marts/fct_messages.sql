@@ -1,23 +1,14 @@
-with base as (
-    select
-        msg.id as message_id,
-        msg.channel_id,
-        cast(date_trunc('day', msg.date) as date) as date_day,
-        msg.message_text,
-        msg.has_image,
-        length(coalesce(msg.message_text, '')) as message_length
-    from {{ ref('stg_telegram_messages') }} msg
-),
+{{ config(materialized='table') }}
 
-final as (
-    select
-        message_id,
-        channel_id,
-        date_day,
-        message_text,
-        has_image,
-        message_length
-    from base
-)
-
-select * from final
+SELECT
+    msg.message_id,
+    msg.message_date,
+    msg.message_text,
+    msg.views,
+    msg.replies_count,
+    msg.post_author,
+    msg.grouped_id,
+    d.date AS date_key
+FROM {{ ref('stg_telegram_messages') }} AS msg
+LEFT JOIN {{ ref('dim_dates') }} AS d
+    ON msg.message_date::date = d.date

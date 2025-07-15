@@ -1,23 +1,20 @@
-name: 'telegram_dbt'
-version: '1.0.0'
+name: telegram_dbt
+version: '1.0'
 config-version: 2
 
-profile: 'telegram_profile'  # This should match your profile name in profiles.yml
+profile: telegram_dbt_profile  
 
-model-paths: ['models']
-seed-paths: ['seeds']
-macro-paths: ['macros']
-target-path: 'target'
-clean-targets:
-  - 'target'
-  - 'dbt_modules'
+model-paths: ["models"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
 
 models:
   telegram_dbt:
-    +materialized: view
     staging:
       +materialized: view
     marts:
       +materialized: table
     enrichment:
       +materialized: table
+

@@ -1,18 +1,6 @@
-with source as (
-    select
-        channel_id,
-        channel_name,
-        min(date::date) as first_message_date,
-        max(date::date) as last_message_date,
-        count(*) as total_messages
-    from {{ ref('stg_telegram_messages') }}
-    group by channel_id, channel_name
-)
+{{ config(materialized='table') }}
 
-select
-    channel_id,
-    channel_name,
-    first_message_date,
-    last_message_date,
-    total_messages
-from source
+SELECT DISTINCT
+    post_author AS channel_name
+FROM {{ ref('stg_telegram_messages') }}
+WHERE post_author IS NOT NULL

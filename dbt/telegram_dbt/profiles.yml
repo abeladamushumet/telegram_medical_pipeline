@@ -1,12 +1,13 @@
-telegram_dbt:
+telegram_dbt_profile:
   target: dev
   outputs:
     dev:
       type: postgres
-      host: localhost
-      user: postgres
-      password: postgres
-      dbname: telegram_data
-      schema: analytics
+      host: localhost          # or your PostgreSQL server address
+      user: postgres     # replace with your PostgreSQL username
+      password: Abeladamu@7  # replace with your PostgreSQL password
       port: 5432
-      threads: 4
+      dbname: telegram_dbt   # replace with your PostgreSQL database name
+      schema: public           # schema to use for dbt models (usually public or custom)
+      threads: 4               # number of threads to use when running dbt
+      keepalives_idle: 0
