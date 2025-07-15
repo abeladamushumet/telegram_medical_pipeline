@@ -1,0 +1,15 @@
+{
+  "image": "data\\images\\tikvahpharma\\171900.jpg",
+  "detections": [
+    {
+      "bbox": [
+        6.855370998382568,
+        0.14409179985523224,
+        494.4532165527344,
+        512.0
+      ],
+      "confidence": 0.8606739044189453,
+      "label": "person"
+    }
+  ]
+}

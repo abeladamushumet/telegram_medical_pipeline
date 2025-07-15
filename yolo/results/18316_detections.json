@@ -1,0 +1,15 @@
+{
+  "image": "data\\images\\lobelia4cosmetics\\18316.jpg",
+  "detections": [
+    {
+      "bbox": [
+        75.39495849609375,
+        76.8228759765625,
+        785.316650390625,
+        1270.1007080078125
+      ],
+      "confidence": 0.41895073652267456,
+      "label": "parking meter"
+    }
+  ]
+}

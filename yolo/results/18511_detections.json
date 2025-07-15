@@ -1,0 +1,15 @@
+{
+  "image": "data\\images\\lobelia4cosmetics\\18511.jpg",
+  "detections": [
+    {
+      "bbox": [
+        299.3276672363281,
+        246.192626953125,
+        412.672607421875,
+        315.0027160644531
+      ],
+      "confidence": 0.3818020224571228,
+      "label": "microwave"
+    }
+  ]
+}

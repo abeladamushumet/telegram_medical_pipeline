@@ -1,0 +1,15 @@
+{
+  "image": "data\\images\\lobelia4cosmetics\\17719.jpg",
+  "detections": [
+    {
+      "bbox": [
+        5.634002685546875,
+        6.736602783203125,
+        305.6210632324219,
+        303.9481201171875
+      ],
+      "confidence": 0.3998139202594757,
+      "label": "refrigerator"
+    }
+  ]
+}

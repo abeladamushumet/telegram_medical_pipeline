@@ -1,0 +1,15 @@
+{
+  "image": "data\\images\\lobelia4cosmetics\\17809.jpg",
+  "detections": [
+    {
+      "bbox": [
+        165.7635498046875,
+        41.87540054321289,
+        401.696533203125,
+        505.51263427734375
+      ],
+      "confidence": 0.5484049320220947,
+      "label": "cell phone"
+    }
+  ]
+}

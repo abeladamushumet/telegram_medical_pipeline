@@ -1,0 +1,15 @@
+{
+  "image": "data\\images\\tikvahpharma\\171799.jpg",
+  "detections": [
+    {
+      "bbox": [
+        37.561607360839844,
+        8.04145622253418,
+        720.0,
+        763.8158569335938
+      ],
+      "confidence": 0.28211161494255066,
+      "label": "refrigerator"
+    }
+  ]
+}

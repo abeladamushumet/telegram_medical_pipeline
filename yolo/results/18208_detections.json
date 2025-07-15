@@ -1,0 +1,15 @@
+{
+  "image": "data\\images\\lobelia4cosmetics\\18208.jpg",
+  "detections": [
+    {
+      "bbox": [
+        313.8664855957031,
+        149.4579315185547,
+        487.125244140625,
+        716.4737548828125
+      ],
+      "confidence": 0.7747960090637207,
+      "label": "bottle"
+    }
+  ]
+}
